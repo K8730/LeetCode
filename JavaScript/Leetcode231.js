@@ -17,6 +17,10 @@ var isPowerOfTwo = function(n) {
 
 // 判断是不是最大幂的约数
 var isPowerOfTwo = function(n) {
+    // 32位有符号整数中，最大的 2的幂 = 2^30
+    if(n <= 0){
+        return false;
+    }
     const BIG = 1 << 30;
-    return n > 0 && BIG % n === 0;
+    return BIG % n === 0;
 };
