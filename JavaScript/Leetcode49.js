@@ -17,8 +17,10 @@ var groupAnagrams = function (strs) {
         // 0~25分别对应26个字母，没出现的置为零
         // [0, ...  0, 0]
         const count = new Array(26).fill(0);
+
+        // 统计每个字母出现的次数
         for (let c of str) {
-            // 统计每个字母出现的次数
+            // charCodeAt(): 返回字符串中某个字符的 Unicode 编码
             count[c.charCodeAt() - 'a'.charCodeAt()]++;
         }
         if (map[count]) {
